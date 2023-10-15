@@ -1,0 +1,9 @@
+<div>
+    <div>list page</div>
+    <!-- <a [routerLink]="['/']"">go to main page</a>-->
+    <ul>
+        <li *ngFor="let user of userSummary">
+            <a [routerLink]="user.link">{{user.name}}</a>
+        </li>
+    </ul>
+</div>

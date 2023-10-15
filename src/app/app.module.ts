@@ -3,18 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SideNav } from './components/layout/side-nav/side-nav';
-import { Toolbar } from './components/layout/toolbar/toolbar';
+import { LayoutModule } from './modules/layout/layout.module';
+
+// bootstrapApplication(AppComponent,
+//   {
+//     providers: [
+//       provideRouter(appRoutes, withComponentInputBinding())
+//     ]
+//   }
+// );
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNav,
-    Toolbar
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

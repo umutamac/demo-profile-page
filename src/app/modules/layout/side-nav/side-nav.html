@@ -1,0 +1,15 @@
+<aside class="p-4">
+    <div>
+        <img src="{{logoUrl}}" alt="Ollang logo">
+    </div>
+    <div>
+        <ul>
+            <li *ngFor="let link of links">
+                <a routerLink={{link.url}}>{{link.icon}} {{link.text}} <span
+                        *ngIf="link.notifications > 0">{{link.notifications}}</span></a>
+
+            </li>
+        </ul>
+
+    </div>
+</aside>

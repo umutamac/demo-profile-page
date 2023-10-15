@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MainPage } from './components/main-page/main-page';
-import { Profile } from './components/profile/profile';
+import { ViewsModule } from './modules/views/views.module';
+import { Main } from './modules/views/main/main';
+import { Profile } from './modules/views/profile/profile';
+import { List } from './modules/views/list/list';
 
 
 const routes: Routes = [
-  { path: '', component: MainPage },
-  { path: 'profile', component: Profile },
+  { path: '', component: Main },
+  // { path: 'profile', component: Profile, data: { id: 1 } },
+  { path: 'profile', pathMatch: 'full', component: List  },
+  { path: 'profile/:id', component: Profile }
 ];
 
 @NgModule({
