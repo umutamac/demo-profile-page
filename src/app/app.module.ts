@@ -3,16 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SideNav } from './components/side-nav/side-nav';
+import { SideNav } from './components/layout/side-nav/side-nav';
+import { Toolbar } from './components/layout/toolbar/toolbar';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNav
+    SideNav,
+    Toolbar
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

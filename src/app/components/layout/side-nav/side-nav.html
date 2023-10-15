@@ -1,0 +1,11 @@
+<aside class="p-4">
+    <div>
+        <img src="{{logoUrl}}" alt="Ollang logo">
+    </div>
+    <div>
+        <li *ngFor="let link of links">
+           {{link.icon}} {{link.text}} <span *ngIf="link.notifications > 0">{{link.notifications}}</span>
+        </li>
+
+    </div>
+</aside>
