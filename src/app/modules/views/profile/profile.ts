@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from "../../../shared/data.service";
+import { ActivatedRoute } from '@angular/router';
 
 type User = {
   createdAt: string//date
@@ -20,9 +21,12 @@ type User = {
 })
 export class Profile implements OnInit {
   public user: User | undefined = undefined
-  constructor(private list: DataService) { }
+  constructor(private list: DataService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.user = this.list.getUser("1");// get id from route parameter
+    console.log(this.route)
+    let userId = this.route.snapshot.params['userId'];
+    console.log(`userId: ${userId}`)
+    this.user = userId === null ? undefined : this.list.getUser(userId)
   }
 }

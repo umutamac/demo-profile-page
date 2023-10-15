@@ -1,9 +1,7 @@
 
-// src/app/user.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import * as usersData from './users.json';
 
-import * as usersData from './users.json'
 type User = {
     createdAt: string//date
     name: string
@@ -23,19 +21,22 @@ type User = {
 export class DataService {
     //constructor(private http: HttpClient) { }
 
-    users = usersData;
+   // private users = users
 
     getUsers() {
-        return this.users;
+        return Object.values(usersData);
     }
     getUsersSummary() {
-        const users = this.users;
-        return users.map(user => {
+        //console.log(this.getUsers())
+        //console.log(this.getUsers())
+        //console.log(Array.isArray(usersData))
+
+        return this.getUsers().map(user => {
             return { name: user.name, id: user.id }
         })
     }
     getUser(id: string) {
         const key = parseInt(id);
-        return this.users[key];
+        return usersData[key];
     }
 }

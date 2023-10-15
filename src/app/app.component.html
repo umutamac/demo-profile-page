@@ -1,8 +1,8 @@
 <div class="flex">
   <side-nav class="w-48"></side-nav>
 
-  <div class="flex-1">
-    <toolbar></toolbar>
+  <div class="flex-1 bg-gray-100 p-3">
+    <toolbar [accountInfo]="accountInfo"></toolbar>
 
     <router-outlet></router-outlet>
   </div>

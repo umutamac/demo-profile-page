@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { Main } from './main/main';
-import { Profile } from './profile/profile';
 import { List } from './list/list';
+import { Profile } from './profile/profile';
 
 @NgModule({
     imports: [
@@ -12,13 +11,11 @@ import { List } from './list/list';
         RouterModule
     ],
     declarations: [
-        Main,
         List,
         Profile,
     ],
     exports: [
-        Main,
-        List, 
+        List,
         Profile,
     ]
 })

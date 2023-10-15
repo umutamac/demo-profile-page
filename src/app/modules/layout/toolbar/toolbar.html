@@ -1,5 +1,5 @@
-<div class="toolbar flex-1" role="banner">
-    <div class="flex-1 mx-1">
+<div class="toolbar md:gap-10" role="banner">
+    <div class="flex-1 lg:w-40 px-1 md:mr-28">
         <form>
             <label for="default-search"
                 class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -21,7 +21,7 @@
     </div>
 
 
-    <div class="spacer"></div>
+    <!-- <div class="spacer"></div> -->
 
     <a aria-label="Notifications" href="#" title="Notifications">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-gray-500">
@@ -32,8 +32,12 @@
                 clip-rule="evenodd" />
         </svg>
     </a>
-    <a aria-label="Profile Picture" href="#" title="Profile Picture" class="flex">
-        <img src={{pic}} alt="Profile picutre for {{name}}">
-        <span>{{name}}</span>
+    <a *ngIf="accountInfo" href="#" aria-label="Profile Picture" title="Profile Picture" class="flex items-center">
+        <img class="w-8 mr-2" style="height: 100%"
+            src="https://st4.depositphotos.com/14903220/22197/v/450/depositphotos_221970610-stock-illustration-abstract-sign-avatar-icon-profile.jpg"
+            alt="Profile picutre for {{accountInfo.name}}">
+        <!-- <img src={{pic}} alt="Profile picutre for {{name}}"> -->
+        <span class="font-medium text-gray-500">{{accountInfo.name}}</span>
+        <!-- <a href=""></a> -->
     </a>
 </div>

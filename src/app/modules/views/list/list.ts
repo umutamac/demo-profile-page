@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from "../../../shared/data.service";
 
 @Component({
   selector: 'list',
   templateUrl: './list.html',
-  styleUrls: [/*'./list.css'*/]
+  styleUrls: ['./list.css']
 })
-export class List implements OnInit {
-  public userSummary: { name: string, link: string }[] = []
+export class List {
   constructor(private list: DataService) { }
+  public userShortList: { name: string, link: string }[] = []
 
   ngOnInit(): void {
-    this.userSummary = this.list.getUsersSummary().map(user => {
-      return { name: user.name, link: `/profile/${user.id}` }
+    const userSummary = this.list.getUsersSummary()
+    this.userShortList = userSummary.map(user => {
+      return { name: user.name, link: `${user.id}` }
     });
   }
 }

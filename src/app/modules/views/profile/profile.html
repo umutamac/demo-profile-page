@@ -1,6 +1,99 @@
-<div>
-    <div>profile page</div>
-    <!-- <a [routerLink]="['/']"">go to main page</a>-->
+<div
+    class="flex items-center lg:items-start justify-center lg:justify-around flex-wrap lg:flex-nowrap gap-0 lg:gap-5">
+    <div *ngIf="user; else elseBlock">
 
-    <a routerLink="/">go to main page</a>
+        <!-- hero -->
+        <div class="flex flex-wrap md:flex-nowrap gap-2 mt-5 mb-6">
+
+            <div class="max-w-xs" style="max-width: 10rem;"> <!-- {{user.avatar}} -->
+                <img src="https://st4.depositphotos.com/14903220/22197/v/450/depositphotos_221970610-stock-illustration-abstract-sign-avatar-icon-profile.jpg"
+                    alt="Avatar for {{user.name}}">
+            </div>
+
+            <div>
+                <div class="flex justify-between mb-5">
+                    <!-- name and location -->
+                    <div>
+                        <h1 class="font-bold">{{user.name}}</h1>
+                        <h2 class="h3">{{user.state}}, {{user.country}}</h2>
+                    </div>
+                    <!-- buttons -->
+                    <div>
+                        <button type="button"
+                            class="px-3 py-2 mr-2 rounded-xl border border-blue-600 bg-blue-600 text-white hover:bg-blue-500">Edit
+                            Profile</button>
+                        <button type="button"
+                            class=" px-3 py-2 mr-2 rounded-xl border-gray-800 bg-gray-100 text-gray-600 hover:bg-white">Public
+                            View</button>
+                    </div>
+                </div>
+                <!-- summary -->
+                <div>{{user.summary}}</div>
+            </div>
+
+        </div>
+
+        <!-- stats -->
+        <div class="flex gap-5 mb-6">
+            <div class="flex">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="font-bold">{{user.yearsOfExperience}}+ Years Job</div>
+                    <div>Experienced</div>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div><i class="fa-solid fa-trophy"></i></div>
+                <div>
+                    <div class="font-bold">{{user.certificateCount}} Certificates</div>
+                    <div>Achieved</div>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div>icon</div>
+                <div>
+                    <div class="font-bold">{{user.numberOfInternships}} Internship</div>
+                    <div>Completed</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- tabs -->
+        <div>tabs</div>
+    </div>
+
+    <ng-template #elseBlock>User not found</ng-template>
+
+    <div class="flex justify-center lg:justify-normal bg-white">
+        <div class="p-6 max-w-xl text-center border-4 border-gray-700 rounded-sm">
+            <div class="mb-5 text-4xl ">Upgrade to <span class="font-medium">Pro</span></div>
+
+            <div class="mb-5 text-sm">I am a consultant for a small hotel business. I am currently with them through a rebrand,
+                and they are in need of a new company logo.</div>
+
+            <div class="mb-5 text-sm text-left">
+                <ul >
+                    <li>Unlimited Job Post.</li>
+                    <li>Multiple job communication.</li>
+                    <li>Unlimited calling access from different city.</li>
+                    <li>Hire 10+ freelancers for one project.</li>
+                    <li>Filter, block, search, talent freelancers.</li>
+                </ul>
+            </div>
+
+            <div>
+                <button type="button" class="py-1 px-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white">Upgrade Plan</button>
+            </div>
+
+        </div>
+    </div>
+
 </div>
