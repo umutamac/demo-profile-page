@@ -44,7 +44,7 @@
         </div>
 
         <!-- stats -->
-        <div class="flex gap-5 md:gap-14 mb-7">
+        <div class="flex gap-5 md:gap-14 mb-10">
             <div class="flex items-center gap-2">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -89,10 +89,16 @@
         </div>
 
         <!-- tabs -->
-        <!-- <div>tabs</div> -->
+        <div class="flex gap-7 pb-3 mb-5 text-gray-400 border-b-2 border-gray-400">
+            <div *ngFor="let tab of tabButtons" [ngClass]="{'text-black font-semibold': tab.value == currentTab}">
+                <button type="button" (click)="setTab(tab.value)"
+                    >{{tab.text}}</button>
+            </div>
+        </div>
 
-        <div class="bg-white py-6 px-4 mb-5 rounded-md">
-            <job-history></job-history>
+        <div [ngSwitch]="currentTab" class="bg-white py-6 px-4 mb-5 rounded-md">
+            <job-history *ngSwitchCase="'experience'"></job-history>
+            <div *ngSwitchDefault>Not found</div>
         </div>
     </div>
 
