@@ -4,7 +4,7 @@ import { DataService } from "../../../shared/data.service";
 @Component({
   selector: 'list',
   templateUrl: './list.html',
-  styleUrls: ['./list.css']
+  styleUrls: []
 })
 export class List {
   constructor(private list: DataService) { }

@@ -4,11 +4,13 @@ import { RouterModule } from '@angular/router';
 
 import { List } from './list/list';
 import { Profile } from './profile/profile';
+import { JobHistoryModule } from '../job-history/job-history.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        JobHistoryModule
     ],
     declarations: [
         List,

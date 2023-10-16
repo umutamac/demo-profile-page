@@ -9,6 +9,7 @@ import { NotFound } from './modules/views/not-found/not-found';
 
 
 const routes: Routes = [
+  { path: '', pathMatch: "full", redirectTo: "profile" },
   { path: 'profile', component: List },
   { path: 'profile/:userId', component: Profile },
   { path: '**', component: NotFound }

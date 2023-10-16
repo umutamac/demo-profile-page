@@ -1,29 +1,39 @@
-<div
-    class="flex items-center lg:items-start justify-center lg:justify-around flex-wrap lg:flex-nowrap gap-0 lg:gap-5">
+<div class="flex items-center lg:items-start justify-center lg:justify-around flex-wrap lg:flex-nowrap gap-1 lg:gap-5">
     <div *ngIf="user; else elseBlock">
 
         <!-- hero -->
-        <div class="flex flex-wrap md:flex-nowrap gap-2 mt-5 mb-6">
+        <div class="flex flex-wrap md:flex-nowrap gap-2 mt-5 mb-7">
 
-            <div class="max-w-xs" style="max-width: 10rem;"> <!-- {{user.avatar}} -->
-                <img src="https://st4.depositphotos.com/14903220/22197/v/450/depositphotos_221970610-stock-illustration-abstract-sign-avatar-icon-profile.jpg"
-                    alt="Avatar for {{user.name}}">
+            <div style="max-width: 10rem; min-width: 10rem;">
+                <!-- {{user.avatar}} -->
+                <img src="https://media.licdn.com/dms/image/C4D03AQEa8Np4oXzXjA/profile-displayphoto-shrink_800_800/0/1536786941845?e=1703116800&v=beta&t=jZrtDDVRzBfJ0EpgNsw5TtZwf7YyJwDt6aQPXKUSTnE"
+                    alt="Avatar for {{user.name}}" class="rounded-full">
             </div>
 
             <div>
-                <div class="flex justify-between mb-5">
+                <div class="flex flex-wrap justify-between gap-3 mb-5">
                     <!-- name and location -->
                     <div>
                         <h1 class="font-bold">{{user.name}}</h1>
-                        <h2 class="h3">{{user.state}}, {{user.country}}</h2>
+                        <h2 class="h3 flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z">
+                                </path>
+                            </svg>
+                            <span>{{user.state}}, {{user.country}}</span>
+                        </h2>
                     </div>
                     <!-- buttons -->
                     <div>
                         <button type="button"
-                            class="px-3 py-2 mr-2 rounded-xl border border-blue-600 bg-blue-600 text-white hover:bg-blue-500">Edit
+                            class="px-3 py-2 mr-2 rounded-3xl border-2 border-blue-600 text-white bg-blue-600 hover:bg-blue-500">Edit
                             Profile</button>
                         <button type="button"
-                            class=" px-3 py-2 mr-2 rounded-xl border-gray-800 bg-gray-100 text-gray-600 hover:bg-white">Public
+                            class=" px-3 py-2 mr-2 rounded-3xl border-2 border-gray-300 text-gray-600 bg-gray-100 hover:bg-white">Public
                             View</button>
                     </div>
                 </div>
@@ -34,8 +44,8 @@
         </div>
 
         <!-- stats -->
-        <div class="flex gap-5 mb-6">
-            <div class="flex">
+        <div class="flex gap-5 md:gap-14 mb-7">
+            <div class="flex items-center gap-2">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
@@ -44,53 +54,78 @@
                     </svg>
                 </div>
                 <div>
-                    <div class="font-bold">{{user.yearsOfExperience}}+ Years Job</div>
-                    <div>Experienced</div>
+                    <div class="font-semibold">{{user.yearsOfExperience}}+ Years Job</div>
+                    <div class="text-gray-400">Experienced</div>
                 </div>
             </div>
 
-            <div class="flex">
-                <div><i class="fa-solid fa-trophy"></i></div>
+            <div class="flex items-center gap-2">
                 <div>
-                    <div class="font-bold">{{user.certificateCount}} Certificates</div>
-                    <div>Achieved</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="font-semibold">{{user.certificateCount}} Certificates</div>
+                    <div class="text-gray-400">Achieved</div>
                 </div>
             </div>
 
-            <div class="flex">
-                <div>icon</div>
+            <div class="flex items-center gap-2">
                 <div>
-                    <div class="font-bold">{{user.numberOfInternships}} Internship</div>
-                    <div>Completed</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="font-semibold">{{user.numberOfInternships}} Internship</div>
+                    <div class="text-gray-400">Completed</div>
                 </div>
             </div>
         </div>
 
         <!-- tabs -->
-        <div>tabs</div>
+        <!-- <div>tabs</div> -->
+
+        <div class="bg-white py-6 px-4 mb-5 rounded-md">
+            <job-history></job-history>
+        </div>
     </div>
 
     <ng-template #elseBlock>User not found</ng-template>
 
-    <div class="flex justify-center lg:justify-normal bg-white">
-        <div class="p-6 max-w-xl text-center border-4 border-gray-700 rounded-sm">
-            <div class="mb-5 text-4xl ">Upgrade to <span class="font-medium">Pro</span></div>
+    <!-- side banner -->
+    <div class="flex-shrink-0 max-w-sm flex justify-center lg:justify-normal bg-white">
+        <div class="p-6 max-w-xl text-center border-2 border-gray-400 rounded-sm">
+            <div class="max-w-2xl">
+                <img src="https://img.freepik.com/free-vector/trophy_78370-345.jpg?w=740&t=st=1697467962~exp=1697468562~hmac=a6e7b69bd64c0a43eeba74fddb7461fc1623d43e70ff3f77e6b30d08934774cc"
+                    alt="Tropy image">
+            </div>
 
-            <div class="mb-5 text-sm">I am a consultant for a small hotel business. I am currently with them through a rebrand,
-                and they are in need of a new company logo.</div>
+            <div class="mb-5 text-4xl">Upgrade to <span class="font-medium">Pro</span></div>
+
+            <div class="mb-5 text-sm">I am a consultant for a small hotel business. I am currently with them through a
+                rebrand, and they are in need of a new company logo.</div>
 
             <div class="mb-5 text-sm text-left">
-                <ul >
-                    <li>Unlimited Job Post.</li>
-                    <li>Multiple job communication.</li>
-                    <li>Unlimited calling access from different city.</li>
-                    <li>Hire 10+ freelancers for one project.</li>
-                    <li>Filter, block, search, talent freelancers.</li>
+                <ul>
+                    <li><i class="fa fa-solid fa-check checkmark"></i> Unlimited Job Post.</li>
+                    <li><i class="fa fa-solid fa-check checkmark"></i> Multiple job communication.</li>
+                    <li><i class="fa fa-solid fa-check checkmark"></i> Unlimited calling access from different city.
+                    </li>
+                    <li><i class="fa fa-solid fa-check checkmark"></i> Hire 10+ freelancers for one project.</li>
+                    <li><i class="fa fa-solid fa-check checkmark"></i> Filter, block, search, talent freelancers.</li>
                 </ul>
             </div>
 
             <div>
-                <button type="button" class="py-1 px-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white">Upgrade Plan</button>
+                <button type="button"
+                    class="py-2 px-3 rounded-3xl border-2 border-blue-600 bg-blue-600 hover:bg-blue-500 text-white">Upgrade
+                    Plan</button>
             </div>
 
         </div>

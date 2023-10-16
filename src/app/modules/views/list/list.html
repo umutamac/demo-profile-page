@@ -1,8 +1,9 @@
-<div>
-    <div class="p-3 mb-3">
-        <ul class="md:columns-2">
-            <li *ngFor="let user of userShortList">
-                <a [routerLink]="user.link">{{user.name}}</a>
+<div class="p-3 mb-3">
+    <div class="text-3xl font-bold mb-5 pb-5 border-b-2 border-gray-300">Select a User</div>
+    <div class="">
+        <ul class="md:columns-2 lg:columns-3">
+            <li *ngFor="let user of userShortList" class="text-lg mb-2 ">
+                <a [routerLink]="user.link" class="font-semibold text-gray-600 hover:text-blue-500">{{user.name}}</a>
             </li>
         </ul>
 

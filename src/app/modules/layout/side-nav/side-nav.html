@@ -1,13 +1,17 @@
-<aside class="p-4">
-    <div>
-        <a [routerLink]="['/profile']"><img src="{{logoUrl}}" alt="Ollang logo"></a>
+<aside class="p-4 border-r-2 border-r-gray-300 h-screen">
+    <div class="mb-8">
+        <a [routerLink]="['/']"><img src="{{logoUrl}}" alt="Ollang logo"></a>
     </div>
     <div>
-        <ul>
-            <li *ngFor="let link of links">
-                <a routerLink={{link.url}}>{{link.icon}} {{link.text}} <span
-                        *ngIf="link.notifications > 0">{{link.notifications}}</span></a>
-
+        <ul class="text-gray-500">
+            <li *ngFor="let link of links" class="flex mb-5 items-center text-gray-400">
+                <a [routerLink]="[link.url]" routerLinkActive="font-semibold text-black" [routerLinkActiveOptions]="{exact: link.activeOnExactMatch}">
+                    <!-- [routerLinkActiveOptions]="{exact: link.activeOnExactMatch}" -->
+                    <i class="{{link.icon}} w-7 mr-1 "></i>
+                    <span>{{link.text}}</span>
+                </a>
+                <span *ngIf="link.notifications > 0"
+                    class="ml-auto rounded-3xl text-sm bg-blue-600 text-white px-2 py-0.5">{{link.notifications}}+</span>
             </li>
         </ul>
 
